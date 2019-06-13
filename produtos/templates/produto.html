@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <body>
+        <a href="{% url 'logout' %}">Sair</a>
+        <ul>
+            {% for produto in products %}
+            <li> <a href="{% url 'produto_upd' produto.id %}"> {{ produto.nome }} </a>
+                 <a href="{% url 'produto_del' produto.id %}">  X </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <br>
+        <a href="{% url 'produto_new' %}">Novo Produto</a>
+    </body>
+</html>
